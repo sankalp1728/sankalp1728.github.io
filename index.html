@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sankalp Gupta - Backend Engineer</title>
+<meta name="description" content="Sankalp Gupta - Backend engineer with 5 years building payments, lending and accounting integration systems in TypeScript and Node.js.">
+<style>
+:root{--bg:#fff;--fg:#1d2329;--muted:#5b6670;--accent:#1f5fa8;--line:#e3e7eb;--chip:#f1f4f7}
+@media (prefers-color-scheme:dark){:root{--bg:#121619;--fg:#e4e8eb;--muted:#9aa5ae;--accent:#6ea8ef;--line:#2a3138;--chip:#1d2329}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:820px;margin:0 auto;padding:48px 20px 64px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:2.2rem;margin:0;line-height:1.2}
+.tagline{font-size:1.15rem;color:var(--muted);margin:4px 0 12px}
+.contact{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.95rem}
+h2{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:6px;margin:40px 0 16px}
+.job{margin-bottom:28px}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 12px}
+.job-head h3{margin:0;font-size:1.08rem}
+.when{color:var(--muted);font-size:.92rem;white-space:nowrap}
+.where{color:var(--muted);font-size:.95rem;margin-bottom:6px}
+ul{margin:6px 0 0;padding-left:20px}li{margin:4px 0}
+.skills{display:grid;grid-template-columns:170px 1fr;gap:8px 16px}
+.skills dt{font-weight:600}.skills dd{margin:0}
+.chips span{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:4px;padding:1px 8px;margin:2px 4px 2px 0;font-size:.88rem}
+@media (max-width:600px){.skills{grid-template-columns:1fr}.skills dt{margin-top:8px}main{padding-top:32px}}
+@media print{body{font-size:12px}main{padding:0}h2{margin-top:20px}a{color:inherit}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Sankalp Gupta</h1>
+  <p class="tagline">Backend Engineer &middot; Payments, Lending &amp; Integration Platforms</p>
+  <div class="contact">
+    <span>Delhi, India</span>
+    <a href="mailto:sankalp1728@gmail.com">sankalp1728@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sankalp-gupta-0b9b6411b">LinkedIn</a>
+    <a href="https://github.com/sankalp1728">GitHub</a>
+  </div>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p>Backend engineer with 5 years building money movement, lending and payments systems for fintech and commerce in India and the UAE, primarily in TypeScript, Node.js and NestJS. Built the merchant lending backend behind 500,000 Jio Financial Services personal loans in its first three months, a payment gateway aggregation service with cross-provider reconciliation and refunds, and an accounting integration platform handling roughly 30,000 transactions a month. Turns compliance requirements into production systems (UAE VAT, Peppol e-invoicing) and works daily with Claude Code for feature design and production debugging.</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head"><h3>Backend Developer &mdash; Alaan</h3><span class="when">Oct 2024 &ndash; Present</span></div>
+    <div class="where">Dubai, UAE (Remote) &middot; Corporate spend management fintech</div>
+    <ul>
+      <li>Own the accounting integration platform across ten ERP systems including Zoho Books, NetSuite, QuickBooks Online, Xero, Dynamics 365 and Odoo, at 92.4% export success over roughly 30,000 monthly transactions.</li>
+      <li>Migrated public API credential provisioning to a Kafka consumer spanning three repositories and two teams, replacing manual database operations with self-serve provisioning across 101 live integrations.</li>
+      <li>Built root-cause-analysis agents that raise alerts on transaction export failures; debug production issues with Claude Code, querying logs through Grafana MCP servers.</li>
+      <li>Built UAE VAT treatment and reverse charge export for 438 corporates across all eight statutory treatments; 72,800+ supplier records now carry an auto-applied treatment.</li>
+      <li>Authored the PRD and built the provider integration backend for UAE Peppol e-invoicing, delivering to production in six weeks ahead of the January 2027 regulatory mandate.</li>
+      <li>Replaced per-account chart-of-accounts mapping with bulk import and auto-categorisation; largest single import processed 2,634 accounts in one operation.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Backend Developer &mdash; NowFloats (Reliance Retail)</h3><span class="when">Nov 2022 &ndash; Oct 2024</span></div>
+    <div class="where">Bangalore, India</div>
+    <ul>
+      <li>Built the merchant lending backend for Jio Financial Services, integrating Equifax and Experian credit bureaus, Sen-Sei loan management and EPIK loan origination; supported 500,000 personal loans in the first three months in production.</li>
+      <li>Implemented loan application tracking and JioPay payment gateway integration for EMI collection.</li>
+      <li>Built an ONDC seller application in TypeScript implementing the network's asynchronous callback protocol, with bidirectional Shopify catalogue synchronisation and grievance management microservices.</li>
+      <li>Designed a bulk social publishing and analytics system across Facebook, Instagram, Twitter and Google Merchant Center using Azure Queues, within each provider's API rate limits.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Backend Developer &mdash; Dukaan</h3><span class="when">Nov 2021 &ndash; Oct 2022</span></div>
+    <div class="where">Bangalore, India</div>
+    <ul>
+      <li>Built a payment gateway aggregation microservice over Cashfree, Razorpay and INAI, letting merchants switch providers without integration changes; implemented cross-provider status reconciliation and refund handling.</li>
+      <li>Developed duplicate order detection to close a return fraud pattern.</li>
+      <li>Added a time-freeze capability to the test suite for deterministic testing of time-sensitive ordering and payment APIs.</li>
+      <li>Built Borzo and Delhivery carrier integrations and the shipment tracking layer within a four-carrier logistics service covering 20,000+ pincodes.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd class="chips"><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C++</span></dd>
+    <dt>Backend</dt><dd class="chips"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Django</span><span>DRF</span><span>Celery</span><span>Sequelize</span></dd>
+    <dt>Data &amp; Messaging</dt><dd class="chips"><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Apache Kafka</span><span>AWS SQS</span><span>AWS Kinesis</span><span>Elasticsearch</span></dd>
+    <dt>Cloud &amp; Tooling</dt><dd class="chips"><span>AWS (ECS, Lambda, S3, CloudWatch)</span><span>Kubernetes</span><span>Docker</span><span>Azure Functions</span><span>GitHub Actions</span><span>Grafana</span><span>Sentry</span></dd>
+    <dt>Agentic Development</dt><dd>Claude Code for feature design and debugging, Grafana MCP servers for log search, RCA agents for failure alerting</dd>
+    <dt>Domains</dt><dd>Payments, Lending, Reconciliation, Tax Compliance (UAE VAT, Peppol), Accounting / ERP Integrations, Third-party API Integration, Microservices, RBAC</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="job-head"><h3>B.Tech in Computer Science &mdash; Maharaja Surajmal Institute of Technology</h3><span class="when">2018 &ndash; 2022</span></div>
+  <div class="where">Delhi, India &middot; 8.5 GPA</div>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <p>Hindi (native), English (fluent)</p>
+</section>
+</main>
+</body>
+</html>
