@@ -5,89 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sankalp Gupta - Backend Engineer</title>
 <meta name="description" content="Sankalp Gupta - Backend engineer with 5 years building payments, lending and accounting integration systems in TypeScript and Node.js.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--fg:#1d2329;--muted:#5b6670;--accent:#1f5fa8;--line:#e3e7eb;--chip:#f1f4f7}
-@media (prefers-color-scheme:dark){:root{--bg:#121619;--fg:#e4e8eb;--muted:#9aa5ae;--accent:#6ea8ef;--line:#2a3138;--chip:#1d2329}}
+:root{
+  --bg:#FAFAFA;--card:#FFFFFF;--fg:#09090B;--secondary:#3F3F46;--muted:#475569;--muted-bg:#E8ECF0;
+  --border:#E4E4E7;--accent:#2563EB;--ring:#18181B;
+  --space-1:4px;--space-2:8px;--space-3:16px;--space-4:24px;--space-5:40px;--space-6:64px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#09090B;--card:#131316;--fg:#FAFAFA;--secondary:#D4D4D8;--muted:#A1A1AA;--muted-bg:#1E1E23;
+  --border:#27272A;--accent:#60A5FA;--ring:#FAFAFA;
+}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-main{max-width:820px;margin:0 auto;padding:48px 20px 64px}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-h1{font-size:2.2rem;margin:0;line-height:1.2}
-.tagline{font-size:1.15rem;color:var(--muted);margin:4px 0 12px}
-.contact{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.95rem}
-h2{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:6px;margin:40px 0 16px}
-.job{margin-bottom:28px}
-.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 12px}
-.job-head h3{margin:0;font-size:1.08rem}
-.when{color:var(--muted);font-size:.92rem;white-space:nowrap}
-.where{color:var(--muted);font-size:.95rem;margin-bottom:6px}
-ul{margin:6px 0 0;padding-left:20px}li{margin:4px 0}
-.skills{display:grid;grid-template-columns:170px 1fr;gap:8px 16px}
-.skills dt{font-weight:600}.skills dd{margin:0}
-.chips span{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:4px;padding:1px 8px;margin:2px 4px 2px 0;font-size:.88rem}
-@media (max-width:600px){.skills{grid-template-columns:1fr}.skills dt{margin-top:8px}main{padding-top:32px}}
-@media print{body{font-size:12px}main{padding:0}h2{margin-top:20px}a{color:inherit}}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 "Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Archivo",system-ui,sans-serif;letter-spacing:-.01em}
+a{color:var(--accent);text-decoration:none;transition:color .2s ease,border-color .2s ease,background-color .2s ease}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--ring);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:var(--space-2)}
+.skip:focus{left:var(--space-3);background:var(--card);padding:var(--space-2) var(--space-3);border:1px solid var(--border)}
+main{max-width:880px;margin:0 auto;padding:var(--space-6) var(--space-3)}
+
+header{padding-bottom:var(--space-5);border-bottom:1px solid var(--border)}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:0}
+.tagline{font-size:1.15rem;color:var(--secondary);margin:var(--space-2) 0 var(--space-4)}
+.contact{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.contact a,.contact span{display:inline-flex;align-items:center;gap:var(--space-2);min-height:44px;padding:0 var(--space-3);
+  border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--fg);font-size:.95rem;cursor:pointer}
+.contact span{cursor:default;color:var(--secondary)}
+.contact a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.contact svg{width:18px;height:18px;flex:none}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);margin-top:var(--space-5)}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:var(--space-3)}
+.stat b{display:block;font-family:"Archivo",sans-serif;font-size:1.6rem;line-height:1.2}
+.stat span{color:var(--muted);font-size:.88rem;line-height:1.4;display:block;margin-top:var(--space-1)}
+
+h2{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:var(--space-6) 0 var(--space-4)}
+.profile{font-size:1.06rem;color:var(--secondary);max-width:70ch;margin:0}
+
+.job{display:grid;grid-template-columns:170px 1fr;gap:var(--space-4);padding:var(--space-4) 0;border-top:1px solid var(--border)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums;padding-top:3px}
+.job h3{margin:0;font-size:1.15rem}
+.job h3 small{font-weight:500;color:var(--secondary);font-size:1rem}
+.where{color:var(--muted);font-size:.92rem;margin:var(--space-1) 0 var(--space-2)}
+ul{margin:0;padding-left:1.1em}li{margin:var(--space-2) 0;color:var(--secondary)}
+li::marker{color:var(--accent)}
+
+.skills{display:grid;grid-template-columns:170px 1fr;gap:var(--space-3) var(--space-4);margin:0}
+.skills dt{font-weight:600;padding-top:3px}
+.skills dd{margin:0;color:var(--secondary)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.chips span{background:var(--muted-bg);border-radius:6px;padding:2px 10px;font-size:.88rem;color:var(--fg);white-space:nowrap}
+
+footer{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--border);color:var(--muted);font-size:.88rem}
+
+@media (max-width:720px){
+  main{padding-top:var(--space-5)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .job,.skills{grid-template-columns:1fr;gap:var(--space-1)}
+  .skills dt{margin-top:var(--space-3)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  :root{--bg:#fff;--card:#fff}
+  body{font-size:11.5px}main{padding:0;max-width:none}
+  .contact a,.contact span{border:0;padding:0 var(--space-3) 0 0;min-height:0}
+  h2{margin-top:var(--space-4)}.job{break-inside:avoid;padding:var(--space-3) 0}
+  .skip,footer{display:none}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <main>
 <header>
   <h1>Sankalp Gupta</h1>
   <p class="tagline">Backend Engineer &middot; Payments, Lending &amp; Integration Platforms</p>
-  <div class="contact">
-    <span>Delhi, India</span>
-    <a href="mailto:sankalp1728@gmail.com">sankalp1728@gmail.com</a>
-    <a href="https://www.linkedin.com/in/sankalp-gupta-0b9b6411b">LinkedIn</a>
-    <a href="https://github.com/sankalp1728">GitHub</a>
+  <nav class="contact" aria-label="Contact">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Delhi, India</span>
+    <a href="mailto:sankalp1728@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>sankalp1728@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sankalp-gupta-0b9b6411b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    <a href="https://github.com/sankalp1728"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a>
+  </nav>
+  <div class="stats">
+    <div class="stat"><b>5 yrs</b><span>backend engineering in fintech and commerce</span></div>
+    <div class="stat"><b>500K</b><span>personal loans in 3 months on a lending backend I built</span></div>
+    <div class="stat"><b>10 ERPs</b><span>on the accounting integration platform I own</span></div>
+    <div class="stat"><b>~30K/mo</b><span>transactions exported at 92.4% success</span></div>
   </div>
 </header>
 
-<section>
-  <h2>Profile</h2>
-  <p>Backend engineer with 5 years building money movement, lending and payments systems for fintech and commerce in India and the UAE, primarily in TypeScript, Node.js and NestJS. Built the merchant lending backend behind 500,000 Jio Financial Services personal loans in its first three months, a payment gateway aggregation service with cross-provider reconciliation and refunds, and an accounting integration platform handling roughly 30,000 transactions a month. Turns compliance requirements into production systems (UAE VAT, Peppol e-invoicing) and works daily with Claude Code for feature design and production debugging.</p>
+<div id="content">
+<section aria-labelledby="h-profile">
+  <h2 id="h-profile">Profile</h2>
+  <p class="profile">Backend engineer with 5 years building money movement, lending and payments systems for fintech and commerce in India and the UAE, primarily in TypeScript, Node.js and NestJS. Built the merchant lending backend behind 500,000 Jio Financial Services personal loans in its first three months, a payment gateway aggregation service with cross-provider reconciliation and refunds, and an accounting integration platform handling roughly 30,000 transactions a month. Turns compliance requirements into production systems (UAE VAT, Peppol e-invoicing) and works daily with Claude Code for feature design and production debugging.</p>
 </section>
 
-<section>
-  <h2>Experience</h2>
+<section aria-labelledby="h-exp">
+  <h2 id="h-exp">Experience</h2>
 
-  <div class="job">
-    <div class="job-head"><h3>Backend Developer &mdash; Alaan</h3><span class="when">Oct 2024 &ndash; Present</span></div>
-    <div class="where">Dubai, UAE (Remote) &middot; Corporate spend management fintech</div>
-    <ul>
-      <li>Own the accounting integration platform across ten ERP systems including Zoho Books, NetSuite, QuickBooks Online, Xero, Dynamics 365 and Odoo, at 92.4% export success over roughly 30,000 monthly transactions.</li>
-      <li>Migrated public API credential provisioning to a Kafka consumer spanning three repositories and two teams, replacing manual database operations with self-serve provisioning across 101 live integrations.</li>
-      <li>Built root-cause-analysis agents that raise alerts on transaction export failures; debug production issues with Claude Code, querying logs through Grafana MCP servers.</li>
-      <li>Built UAE VAT treatment and reverse charge export for 438 corporates across all eight statutory treatments; 72,800+ supplier records now carry an auto-applied treatment.</li>
-      <li>Authored the PRD and built the provider integration backend for UAE Peppol e-invoicing, delivering to production in six weeks ahead of the January 2027 regulatory mandate.</li>
-      <li>Replaced per-account chart-of-accounts mapping with bulk import and auto-categorisation; largest single import processed 2,634 accounts in one operation.</li>
-    </ul>
-  </div>
+  <article class="job">
+    <div class="when">Oct 2024 &ndash; Present</div>
+    <div>
+      <h3>Backend Developer <small>&middot; Alaan</small></h3>
+      <div class="where">Dubai, UAE (Remote) &middot; Corporate spend management fintech</div>
+      <ul>
+        <li>Own the accounting integration platform across ten ERP systems including Zoho Books, NetSuite, QuickBooks Online, Xero, Dynamics 365 and Odoo, at 92.4% export success over roughly 30,000 monthly transactions.</li>
+        <li>Migrated public API credential provisioning to a Kafka consumer spanning three repositories and two teams, replacing manual database operations with self-serve provisioning across 101 live integrations.</li>
+        <li>Built root-cause-analysis agents that raise alerts on transaction export failures; debug production issues with Claude Code, querying logs through Grafana MCP servers.</li>
+        <li>Built UAE VAT treatment and reverse charge export for 438 corporates across all eight statutory treatments; 72,800+ supplier records now carry an auto-applied treatment.</li>
+        <li>Authored the PRD and built the provider integration backend for UAE Peppol e-invoicing, delivering to production in six weeks ahead of the January 2027 regulatory mandate.</li>
+        <li>Replaced per-account chart-of-accounts mapping with bulk import and auto-categorisation; largest single import processed 2,634 accounts in one operation.</li>
+      </ul>
+    </div>
+  </article>
 
-  <div class="job">
-    <div class="job-head"><h3>Backend Developer &mdash; NowFloats (Reliance Retail)</h3><span class="when">Nov 2022 &ndash; Oct 2024</span></div>
-    <div class="where">Bangalore, India</div>
-    <ul>
-      <li>Built the merchant lending backend for Jio Financial Services, integrating Equifax and Experian credit bureaus, Sen-Sei loan management and EPIK loan origination; supported 500,000 personal loans in the first three months in production.</li>
-      <li>Implemented loan application tracking and JioPay payment gateway integration for EMI collection.</li>
-      <li>Built an ONDC seller application in TypeScript implementing the network's asynchronous callback protocol, with bidirectional Shopify catalogue synchronisation and grievance management microservices.</li>
-      <li>Designed a bulk social publishing and analytics system across Facebook, Instagram, Twitter and Google Merchant Center using Azure Queues, within each provider's API rate limits.</li>
-    </ul>
-  </div>
+  <article class="job">
+    <div class="when">Nov 2022 &ndash; Oct 2024</div>
+    <div>
+      <h3>Backend Developer <small>&middot; NowFloats (Reliance Retail)</small></h3>
+      <div class="where">Bangalore, India</div>
+      <ul>
+        <li>Built the merchant lending backend for Jio Financial Services, integrating Equifax and Experian credit bureaus, Sen-Sei loan management and EPIK loan origination; supported 500,000 personal loans in the first three months in production.</li>
+        <li>Implemented loan application tracking and JioPay payment gateway integration for EMI collection.</li>
+        <li>Built an ONDC seller application in TypeScript implementing the network's asynchronous callback protocol, with bidirectional Shopify catalogue synchronisation and grievance management microservices.</li>
+        <li>Designed a bulk social publishing and analytics system across Facebook, Instagram, Twitter and Google Merchant Center using Azure Queues, within each provider's API rate limits.</li>
+      </ul>
+    </div>
+  </article>
 
-  <div class="job">
-    <div class="job-head"><h3>Backend Developer &mdash; Dukaan</h3><span class="when">Nov 2021 &ndash; Oct 2022</span></div>
-    <div class="where">Bangalore, India</div>
-    <ul>
-      <li>Built a payment gateway aggregation microservice over Cashfree, Razorpay and INAI, letting merchants switch providers without integration changes; implemented cross-provider status reconciliation and refund handling.</li>
-      <li>Developed duplicate order detection to close a return fraud pattern.</li>
-      <li>Added a time-freeze capability to the test suite for deterministic testing of time-sensitive ordering and payment APIs.</li>
-      <li>Built Borzo and Delhivery carrier integrations and the shipment tracking layer within a four-carrier logistics service covering 20,000+ pincodes.</li>
-    </ul>
-  </div>
+  <article class="job">
+    <div class="when">Nov 2021 &ndash; Oct 2022</div>
+    <div>
+      <h3>Backend Developer <small>&middot; Dukaan</small></h3>
+      <div class="where">Bangalore, India</div>
+      <ul>
+        <li>Built a payment gateway aggregation microservice over Cashfree, Razorpay and INAI, letting merchants switch providers without integration changes; implemented cross-provider status reconciliation and refund handling.</li>
+        <li>Developed duplicate order detection to close a return fraud pattern.</li>
+        <li>Added a time-freeze capability to the test suite for deterministic testing of time-sensitive ordering and payment APIs.</li>
+        <li>Built Borzo and Delhivery carrier integrations and the shipment tracking layer within a four-carrier logistics service covering 20,000+ pincodes.</li>
+      </ul>
+    </div>
+  </article>
 </section>
 
-<section>
-  <h2>Skills</h2>
+<section aria-labelledby="h-skills">
+  <h2 id="h-skills">Skills</h2>
   <dl class="skills">
     <dt>Languages</dt><dd class="chips"><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C++</span></dd>
     <dt>Backend</dt><dd class="chips"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Django</span><span>DRF</span><span>Celery</span><span>Sequelize</span></dd>
@@ -98,16 +166,24 @@ ul{margin:6px 0 0;padding-left:20px}li{margin:4px 0}
   </dl>
 </section>
 
-<section>
-  <h2>Education</h2>
-  <div class="job-head"><h3>B.Tech in Computer Science &mdash; Maharaja Surajmal Institute of Technology</h3><span class="when">2018 &ndash; 2022</span></div>
-  <div class="where">Delhi, India &middot; 8.5 GPA</div>
+<section aria-labelledby="h-edu">
+  <h2 id="h-edu">Education</h2>
+  <article class="job">
+    <div class="when">2018 &ndash; 2022</div>
+    <div>
+      <h3>B.Tech in Computer Science</h3>
+      <div class="where">Maharaja Surajmal Institute of Technology, Delhi &middot; 8.5 GPA</div>
+    </div>
+  </article>
 </section>
 
-<section>
-  <h2>Languages</h2>
-  <p>Hindi (native), English (fluent)</p>
+<section aria-labelledby="h-lang">
+  <h2 id="h-lang">Languages</h2>
+  <p class="profile">Hindi (native), English (fluent)</p>
 </section>
+</div>
+
+<footer>Available for backend, integration and forward deployed engineering roles &middot; Delhi, Gurugram, Bangalore or remote</footer>
 </main>
 </body>
 </html>
